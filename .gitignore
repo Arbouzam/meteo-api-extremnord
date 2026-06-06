@@ -1,3 +1,45 @@
+# Secrets — ne JAMAIS commiter
 .env
-.env
-.env
+*.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Modèles ML (trop lourds pour Git — utiliser Git LFS ou un bucket S3)
+models/*.joblib
+models/*.pkl
+models/*.json
+models/*.bin
+*.model
+
+# Tests & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
