@@ -1,0 +1,5 @@
+# Forcer l'inclusion des modèles XGBoost
+!*.ubj
+!*.json
+# Exclure les modèles sklearn trop lourds
+*.pkl

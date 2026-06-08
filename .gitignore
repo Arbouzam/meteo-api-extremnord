@@ -18,11 +18,6 @@ env/
 ENV/
 
 # Modèles ML (trop lourds pour Git — utiliser Git LFS ou un bucket S3)
-models/*.joblib
-models/*.pkl
-models/*.json
-models/*.bin
-*.model
 
 # Tests & coverage
 .pytest_cache/
