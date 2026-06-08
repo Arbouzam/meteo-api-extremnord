@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Literal
 
-from app.schemas.common import PredictionResponse  # noqa: F401  (réexporté)
+from app.schemas.common import PredictionResponse  # noqa: F401
 
 
 class ChaleurPredictionRequest(BaseModel):
@@ -50,3 +50,24 @@ class ChaleurPredictionRequest(BaseModel):
     # --- Calendrier ---
     mois: int = Field(ge=1, le=12)
     saison: int = Field(ge=1, le=4)
+
+
+class ChaleurRegressionRequest(BaseModel):
+    """Features pour la régression Tmax — issues de metadata.json features_reg."""
+
+    # --- Calendrier ---
+    mois: int = Field(ge=1, le=12, description="Mois de l'année")
+    jour_annee: int = Field(ge=1, le=366, description="Jour de l'année")
+    annee: int = Field(ge=1990, le=2100, description="Année")
+    saison: int = Field(ge=1, le=4, description="Saison (1=Harmattan, 2=Préchaud, 3=Pluies, 4=Post-pluies)")
+
+    # --- Rolling Tmax ---
+    temp_max_max3: float = Field(ge=15, le=55, description="Tmax max sur 3 jours (°C)")
+    temp_max_max7: float = Field(ge=15, le=55, description="Tmax max sur 7 jours (°C)")
+    temp_max_std7: float = Field(ge=0, le=10, description="Écart-type Tmax sur 7 jours")
+
+    # --- Indices dérivés ---
+    anomalie_temp: float = Field(ge=-15, le=15, description="Anomalie Tmax vs climatologie (°C)")
+    humidite_rel: float = Field(ge=0, le=100, description="Humidité relative (%)")
+    pression_moy: float = Field(ge=900, le=1050, description="Pression moyenne (hPa)")
+    amplitude_thermique: float = Field(ge=0, le=30, description="Tmax - Tmin (°C)")
