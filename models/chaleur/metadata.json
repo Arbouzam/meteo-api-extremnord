@@ -105,5 +105,9 @@
     "rmse_tmax": 0.31,
     "mae_sarima": 0.96
   },
-  "date_entrainement": "2026-05-19 09:54"
+  "date_entrainement": "2026-06-11 11:08",
+  "seuil_optimal_j3": 0.12,
+  "seuil_optimal_j7": 0.07,
+  "seuil_optimal_j14": 0.05,
+  "seuil_optimal_j30": 0.05
 }

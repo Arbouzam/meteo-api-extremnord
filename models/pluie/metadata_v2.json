@@ -124,5 +124,9 @@
     "mae_pluie_mm": 3.29,
     "rmse_pluie_mm": 5.05
   },
-  "date_entrainement": "2026-06-01 00:56"
+  "date_entrainement": "2026-06-11 08:50",
+  "seuil_optimal_j3": 0.24,
+  "seuil_optimal_j7": 0.17,
+  "seuil_optimal_j14": 0.09,
+  "seuil_optimal_j30": 0.12
 }
